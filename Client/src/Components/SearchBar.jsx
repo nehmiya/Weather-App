@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
                     type="text" 
                     value={city} 
                     onChange={(e)=> setCity(e.target.value)} 
-                    placeholder='Adiss Ababa' 
+                    placeholder='City Name' 
                     required 
                 />
             </form>
