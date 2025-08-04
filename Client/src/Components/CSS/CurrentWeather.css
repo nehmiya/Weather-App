@@ -1,6 +1,86 @@
-.current-weather{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    gap: 50px;
+.current-weather {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 50px;
+}
+
+.current-weather .temp {
+  margin-top: 0;
+}
+
+.current-weather img {
+  width: 100%;
+}
+
+.current-weather p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.condition, .condition_icon {
+  text-align: center;
+}
+
+.condition-text {
+  margin-top: 0;
+}
+
+.left-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 400px;
+}
+
+.right-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detailed-items {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  gap: 100px;
+}
+
+.detailed-items:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: #cccccc;
+}
+
+
+.right-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 300px;
+  width: 100%;
+}
+
+.detailed-items {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.detailed-items > div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .detailed-items {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
