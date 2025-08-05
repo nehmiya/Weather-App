@@ -1,86 +1,98 @@
 .current-weather {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: stretch;
   gap: 50px;
-}
-
-.current-weather .temp {
-  margin-top: 0;
-}
-
-.current-weather img {
+  flex-wrap: wrap;
   width: 100%;
 }
 
-.current-weather p {
-  font-size: 1.2rem;
+.left-card,
+.right-card {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.temp {
+  font-size: 4rem;
   margin: 0;
 }
 
-.condition, .condition_icon {
+.current-weather p {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+}
+
+.condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
+.condition img {
+  width: 64px;
+  height: 64px;
+}
+
 .condition-text {
-  margin-top: 0;
-}
-
-.left-card {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  max-width: 400px;
-}
-
-.right-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .detailed-items {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  gap: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  gap: 100px;
-}
-
-.detailed-items:last-child {
-  margin-bottom: 0;
 }
 
 .detail-label {
+  font-weight: 600;
   color: #cccccc;
 }
 
+.detail-value {
+  font-weight: bold;
+  text-align: right;
+}
 
-.right-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 300px;
+.detailed-items small {
+  font-size: 0.85rem;
+  color: #aaa;
   width: 100%;
+  margin-top: 0.25rem;
 }
 
-.detailed-items {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  gap: 50px;
-  flex-wrap: wrap;
-}
+@media (max-width: 768px) {
+  .current-weather {
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-.detailed-items > div {
-  display: flex;
-  flex-direction: column;
-}
+  .left-card,
+  .right-card {
+    width: 100%;
+  }
 
-@media (max-width: 600px) {
+  .temp {
+    font-size: 3rem;
+  }
+
   .detailed-items {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .condition img {
+    width: 48px;
+    height: 48px;
   }
 }

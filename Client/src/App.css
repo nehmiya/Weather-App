@@ -1,35 +1,60 @@
-.app{
+.app {
   width: 100vw;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  transition: background 1s ease-in-out;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
-.bg-sunrise{
+.bg-sunrise {
   background: linear-gradient(to bottom right, #1c2f49, #ff5f9d);
 }
-.bg-day{
+
+.bg-day {
   background: linear-gradient(to bottom right, #30507e, #1c2f49);
 }
-.bg-sunset{
+
+.bg-sunset {
   background: linear-gradient(to bottom right, #30507e, #ff5f9d);
 }
-.bg-night{
+
+.bg-night {
   background: linear-gradient(to bottom right, #1c2f49, #0d151f);
 }
 
-.card{
+.card {
   background: rgba(50, 50, 50, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(50, 50, 50, 0.3);
   padding: 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .container {
+    gap: 1.5rem;
+  }
 }
