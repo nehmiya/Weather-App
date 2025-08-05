@@ -25,11 +25,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Derive hour from API localtime if available, otherwise fallback to current hour
   const hour = useMemo(() => {
-    const localtimeStr = weatherData.location?.localtime; // e.g., "2025-08-03 14:23"
+    const localtimeStr = weatherData.location?.localtime; 
     if (typeof localtimeStr === "string") {
-      // try to parse, assuming format "yyyy-MM-dd HH:mm"
       const parsed = parse(localtimeStr, "yyyy-MM-dd HH:mm", new Date());
       if (!isNaN(parsed)) {
         return parsed.getHours();
@@ -41,15 +39,13 @@ function App() {
   const gradientClass = useMemo(() => getGradientClass(hour), [hour]);
 
   useEffect(() => {
-    if (!city) return; // guard
-
+    if (!city) return; 
     const fetchingWeatherData = async () => {
       setLoading(true);
       setError("");
       try {
         const data = await getWeatherData(city);
 
-        // Defensive access: ensure expected shape exists
         const todayForecast = data?.forecast?.forecastday?.[0];
         if (!todayForecast) {
           throw new Error("Incomplete forecast data received");
@@ -63,12 +59,11 @@ function App() {
             mintemp_c,
             maxtemp_c,
           },
-          hourly: todayForecast.hour ?? [], // per-hour array
+          hourly: todayForecast.hour ?? [], 
           weekly: data.forecast.forecastday,
           location: data.location,
         });
       } catch (err) {
-        // Normalize error message
         const message =
           err?.message || typeof err === "string"
             ? err
