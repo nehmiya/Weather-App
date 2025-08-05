@@ -8,7 +8,8 @@ export const getWeatherData = async (city, options = {}) => {
   try {
     const resp = await fetch(
       `${
-        import.meta.env.VITE_WEATHER_PROXY_URL || "http://localhost:5500"
+        import.meta.env.VITE_WEATHER_PROXY_URL ||
+        "https://weather-app-q6gd.onrender.com"
       }/api/weather?city=${encodeURIComponent(city)}`,
       {
         signal: controller.signal,

@@ -24,6 +24,7 @@ const SearchBar = ({ onSearch }) => {
                     placeholder='City Name' 
                     required 
                 />
+                <input type="submit" value="Search" />
             </form>
         </>
     )

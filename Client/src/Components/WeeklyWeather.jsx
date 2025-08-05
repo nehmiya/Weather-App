@@ -21,7 +21,7 @@ function WeeklyWeather({ data }) {
                 />
                 <span className="day-text">{day.day.condition.text}</span>
                 <div className="day-temp">
-                  {Math.round(day.day.maxtemp_c)}° {Math.round(day.day.mintemp_c)}°
+                  ⬆️{Math.round(day.day.maxtemp_c)}°c ⬇️{Math.round(day.day.mintemp_c)}°c
                 </div>
               </div>
             </div>
